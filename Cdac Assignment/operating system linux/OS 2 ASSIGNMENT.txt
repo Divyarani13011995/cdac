@@ -1,0 +1,201 @@
+CDAC MUMBAI
+__________________
+____________________
+Concepts of Operating System
+============================
+Assignment 2 
+=============================
+Part A
+===================================
+What will the following commands do? 
+________________________________
+ echo "Hello, World!"  => it is used to print the statement.
+ name="Productive" =>
+ touch file.txt =>it will create blank file for us.
+ ls -a => it shows all the directories and files as well
+ rm file.txt =>to remove file
+ cp file1.txt file2.txt =>suppose in file1.txt i type hello then in file2 i type hii using this command file1 data hello copied 
+                           into file2 and file2 data will be removed
+ mv file.txt /path/to/directory/ => move file1.txt into that path
+ chmod 755 script.sh => it gives permission for owner to read write and execute and group and others to read and execute. 
+ grep "pattern" file.txt => 
+ kill PID 
+ mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt 
+ ls -l | grep ".txt" 
+ cat file1.txt file2.txt | sort | uniq 
+ ls -l | grep "^d" 
+ grep -r "pattern" /path/to/directory/ 
+ cat file1.txt file2.txt | sort | uniq –d 
+ chmod 644 file.txt =>it gives read and write permission for owner and read permission for group and others
+ cp -r source_directory destination_directory 
+ find /path/to/search -name "*.txt" 
+ chmod u+x file.txt => Adding permission 
+ echo $PATH 
+Part 
+*********************************************************************************************************
+Part B
+*********************************************************************************************************
+Identify True or False:
+ 
+1. ls - is used to list files and directories in a directory.=> TRUE
+
+2. mv is used to move files and directories. =>TRUE
+
+3. cd is used to copy files and directories. =>FALSE =>cd =>COMMAND USED FOR CHANGE DIRECTORY
+
+4. pwd stands for "print working directory" and displays the current directory.=> FALSE=> pwd=>Present working Directory
+
+5. grep is used to search for patterns in files. =>TRUE=>grep stands for=>global search for regular expression and Printout.
+
+6. chmod 755 file.txt gives read, write, and execute permissions to the owner, and read and execute 
+permissions to group and others. =>TRUE
+
+7. mkdir -p directory1/directory2 creates nested directories, creating directory2 inside directory1 
+if directory1 does not exist.=>TRUE  
+
+8. rm -rf file.txt deletes a file forcefully without confirmation.=>TRUE 
+_________________________________________________________________________________________________________
+Identify the Incorrect Commands:
+ 
+1. chmodx is used to change file permissions.=>chmod 
+2. cpy is used to copy files and directories. =>cp
+3. mkfile is used to create a new file. =>mkfile
+4. catx is used to concatenate files. =>cat file1.txt >> file2.txt=>using this command we can take data of file1.txt in file2.txt=>file2.txt shows all data of file1 and file2
+5. rn is used to rename files. =rn
+
+**************************************************************************************************************
+
+Part C
+______________________________________________________________________________________________________________
+Question 1: Write a shell script that prints "Hello, World!" to the terminal. 
+        code:    #!/bin/sh
+                 echo "Hello world!"
+        output : Hello world!
+
+
+Question 2: Declare a variable named "name" and assign the value "CDAC Mumbai" to it. Print the 
+value of the variable. 
+         code :  name="CDAC MUMBAI."
+                 echo $name
+         output : divyaranikarande@LAPTOP-RQ1FNM5J:~$ vi Variable.sh
+                  divyaranikarande@LAPTOP-RQ1FNM5J:~$ chmod +x Variable.sh
+                  divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./Variable.sh
+                  CDAC MUMBAI.
+
+Question 3: Write a shell script that takes a number as input from the user and prints it. 
+         code   : #!/bin/sh
+                  echo "Enter the number"
+                  read number
+                  echo "$number"
+         output : divyaranikarande@LAPTOP-RQ1FNM5J:~$ vi Read.sh
+                  divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./Read.sh
+                  Enter the number
+                  12
+                  12
+
+Question 4: Write a shell script that performs addition of two numbers (e.g., 5 and 3) and prints the 
+result. 
+code :#!/bin/sh
+      echo "enter num1"
+      read num1
+      echo "enter num2"
+      read num2
+      sum=$(( $num1 + $num2 b ))
+      echo $sum
+output :
+        divyaranikarande@LAPTOP-RQ1FNM5J:~$ vi Addition.sh
+        divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./Addition.sh
+        enter num1
+        1
+        enter num2
+        2
+        3
+Question 5: Write a shell script that takes a number as input and prints "Even" if it is even, otherwise 
+            prints "Odd".
+     code:   #!/bin/sh
+             echo "Enter the number :"
+             read number
+             if [ `expr $number % 2` -eq 0 ]
+             then
+             echo "EVEN"
+             else
+             echo "ODD"
+             fi
+    Output : divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./EvevOdd.sh
+             Enter the number :
+             12
+             EVEN
+ 
+ 
+Question 6: Write a shell script that uses a for loop to print numbers from 1 to 5.
+      output : divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./for.sh
+              1
+              2
+              3
+              4
+              5
+              divyaranikarande@LAPTOP-RQ1FNM5J:~$ cat for.sh
+       code:  #!/bin/bash
+
+              for (( i=1;i<=5;i++ ))
+              do
+              echo "$i"
+              done
+     
+Question 7: Write a shell script that uses a while loop to print numbers from 1 to 5. 
+            divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./while.sh
+            1
+            2
+            3
+            4
+            5
+            divyaranikarande@LAPTOP-RQ1FNM5J:~$ cat while.sh
+      code :#!/bin/bash
+            x=1
+            while [[ $x -le 5 ]]
+            do
+            echo $x
+            let x++
+            done
+Question 8: Write a shell script that checks if a file named "file.txt" exists in the current directory. If it 
+does, print "File exists", otherwise, print "File does not exist". 
+output:
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ vi fileexist.sh
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./fileexist.sh
+Enter the file name :
+text.txt
+file found
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cat fileexist.sh
+code : 
+#!/bin/bash
+echo "Enter the file name : "
+read file
+if [ $file ]
+then
+        echo "file found"
+else
+        echo "file not found"
+fi
+
+
+Question 9: Write a shell script that uses the if statement to check if a number is greater than 10 and 
+prints a message accordingly. 
+output:
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ ./greater.sh
+Enter the number :
+12
+Number is greater than 10
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cat greater.sh
+code : 
+#!/bin/bash
+echo "Enter the number : "
+read number
+if [ $number -gt 10 ]
+then
+        echo "Number is greater than 10"
+else
+        echo "Number is less than 10"
+fi
+Question 10: Write a shell script that uses nested for loops to print a multiplication table for numbers 
+from 1 to 5. The output should be formatted nicely, with each row representing a number and each 
+column representing the multiplication result for that number.

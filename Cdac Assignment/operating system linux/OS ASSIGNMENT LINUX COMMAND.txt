@@ -1,0 +1,170 @@
+                                                         CDAC MUMBAI 
+                                                 Concepts of Operating System 
+Assignment 1 
+
+Problem 1: Read the instructions carefully and answer accordingly. If there is 
+any need to insert some data then do that as well. 
+
+a) Navigate and List:
+a. Start by navigating to your home directory and list its contents. Then, move into a 
+directory named "LinuxAssignment" if it exists; otherwise, create it. 
+
+Ans : Explain:
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ pwd
+/home/divyaranikarande
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ ls
+Divya.txt  Lang             Music  animal  cdac   divya1  dk1.sh     filee1.txt  link  teacher.java  user1  wild
+Home       LinuxAssignment  OS     bird    d.txt  dk.sh   filee.txt  lang1       pet   thisweek      week
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cd LinuxAssignment
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$
+
+
+b) File Management:
+     a. Inside the "LinuxAssignment" directory, create a new file named "file1.txt". Display its 
+        contents.
+Ans : Explain :
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cd LinuxAssignment
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ cat file1.txt
+Hello
+Welcome to cadc mumbai......divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ cat > file1.txt
+HELLO
+HII
+I am Divyarani...divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ cat file1.txt
+HELLO
+HII
+I am Divyarani...divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$
+
+c) Directory Management:
+      a. Create a new directory named "docs" inside the "LinuxAssignment" directory
+
+Ans : Explain :
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cd LinuxAssignment
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ mkdir docs
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$
+
+d) Copy and Move Files:
+      a. Copy the "file1.txt" file into the "docs" directory and rename it to "file2.txt".
+Ans : Explain : 
+ 
+      divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ cp file1.txt docs/
+      divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ cd docs
+      divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment/docs$ ls
+      file1.txt
+      divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment/docs$ mv file1.txt file2.txt
+      divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment/docs$ ls
+      file2.txt
+      divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment/docs$
+
+e) Permissions and Ownership:
+a. Change the permissions of "file2.txt" to allow read, write, and execute permissions for 
+the owner and only read permissions for others. Then, change the owner of "file2.txt" to 
+the current user. 
+Ans : Explain : 
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment/docs$ chmod 744 file2.txt
+
+
+/* divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment/docs$ chown divyaranikarande file2.txt
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment/docs$ ll
+total 12
+drwxr-xr-x 2 divyaranikarande divyaranikarande 4096 Mar  7 19:00 ./
+drwxr-xr-x 3 divyaranikarande divyaranikarande 4096 Mar  7 18:30 ../
+-rwxr--r-- 1 divyaranikarande divyaranikarande   27 Mar  7 18:50 file2.txt*  */
+      
+ divyaranikarande@LAPTOP-RQ1FNM5J:~$ ls *.txt
+Divya.txt  file1.txt  filee1.txt
+d.txt      filee.txt
+divyaranikarande@LAPTOP-RQ1FNM5J:~$
+
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cat > file2.txt
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ grep "HELLO" file2.txt
+HELLO WORLD
+divyaranikarande@LAPTOP-RQ1FNM5J:~$
+
+
+
+zip error: Nothing to do! (abcd.zip)
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cd LinuxAssi
+gnment
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ zip -abcd.zip docs
+
+zip error: Invalid command arguments (short option 'a' not supported)
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ sudo apt install zip
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+zip is already the newest version (3.0-12build2).
+0 upgraded, 0 newly installed, 0 to remove and 30 not upgraded.
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ zip -abcd.zip docs
+
+zip error: Invalid command arguments (short option 'a' not supported)
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ zip -r abcd.zip docs
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$
+
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$
+
+
+
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ unzip abcd.zip -d AB
+unzip:  cannot find or open abcd.zip, abcd.zip.zip or abcd.zip.ZIP.
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cd LinuxAssignment
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$ unzip abcd.zip -d ab
+Archive:  abcd.zip
+   creating: ab/docs/
+ extracting: ab/docs/file2.txt
+divyaranikarande@LAPTOP-RQ1FNM5J:~/LinuxAssignment$
+
+
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ cat > numbers.txt
+12345
+123456
+1234567
+12345678
+1234567890
+1234
+124456765
+1246578
+46789
+32435678
+23456789
+1234567890
+123456789
+123456789
+123456789
+23456789
+234567890^C
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ head -15
+^C
+divyaranikarande@LAPTOP-RQ1FNM5J:~$ head -15 numbers.txt
+12345
+123456
+1234567
+12345678
+1234567890
+1234
+124456765
+1246578
+46789
+32435678
+23456789
+1234567890
+123456789
+123456789
+123456789
+divyaranikarande@LAPTOP-RQ1FNM5J:~$
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+      
+ 
+
+
