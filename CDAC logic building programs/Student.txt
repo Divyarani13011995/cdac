@@ -1,0 +1,19 @@
+class Student
+{
+   String Name;
+   int Maths;
+   int Physics;
+   int Chemistry;
+
+   Student()
+{
+    a=50;
+    b=50;
+    c=50;
+ }
+   
+   public static void main(String args[])
+{
+      Student s = new Student();
+}
+ }  
